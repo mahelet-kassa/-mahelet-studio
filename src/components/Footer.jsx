@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="md:col-span-3">
             <h4 className="text-xs uppercase tracking-[0.2em] text-neutral-400 font-medium mb-5">Navigate</h4>
             <ul className="space-y-3">
-              {[{ label: 'Gallery', path: 'gallery' }, { label: 'Services', path: 'pricing' }, { label: 'About', path: 'about' }, { label: 'Contact', path: 'contact' }].map((item) => (
+              {[{ label: 'Gallery', path: 'gallery' }, { label: 'Services', path: 'services' }, { label: 'About', path: 'about' }, { label: 'Contact', path: 'contact' }].map((item) => (
                 <li key={item.label}>
                   <Link
                     to={`/${item.path}`}

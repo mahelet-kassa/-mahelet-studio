@@ -1,5 +1,7 @@
+/* Tailwind CSS — utility-first CSS framework (https://tailwindcss.com) */
 @import "tailwindcss";
 
+/* Custom fonts & colors — extends Tailwind's default theme */
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
@@ -7,6 +9,7 @@
   --color-neutral-875: #1a1a19;
 }
 
+/* Global defaults */
 html {
   scroll-behavior: smooth;
 }
@@ -24,6 +27,7 @@ body {
   color: #fff;
 }
 
+/* Custom scrollbar (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -38,17 +42,6 @@ body {
   background: #999;
 }
 
-/* Smooth image loading */
-img {
-  transition: opacity 0.4s ease;
-}
-img[loading] {
-  opacity: 0;
-}
-img.loaded {
-  opacity: 1;
-}
-
-/* Cursor styles for lightbox */
+/* Lightbox cursor styles */
 .cursor-zoom-in { cursor: zoom-in; }
 .cursor-zoom-out { cursor: zoom-out; }

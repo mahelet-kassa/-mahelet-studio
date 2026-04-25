@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { Check, ArrowRight } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import FadeIn from '../components/FadeIn';
-import { services } from '../data/pricing';
+import { services } from '../data/services';
 
-export default function Pricing() {
+export default function Services() {
   return (
     <PageTransition>
       {/* Header */}
