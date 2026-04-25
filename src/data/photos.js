@@ -38,13 +38,8 @@ export const photos = [
   { id: 38, src: '/images/photo-38.jpg', thumb: '/images/photo-38.jpg', title: 'Always & Forever', category: 'Couples', aspect: 'landscape' },
 ];
 
-export const featuredPhotos = [
-  photos[0],   // photo-01 — Graduation
-  photos[25],  // photo-26 — Portraits (new)
-  photos[13],  // photo-14 — Couples
-  photos[30],  // photo-31 — Portraits (new)
-  photos[27],  // photo-28 — Graduation (new)
-  photos[34],  // photo-35 — Couples (new)
-];
+export const featuredPhotos = photos.filter(p =>
+  [1, 26, 14, 31, 28, 35].includes(p.id)
+);
 
 export const heroImage = '/images/photo-01.jpg';
