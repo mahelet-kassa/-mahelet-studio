@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import { readdir, stat, mkdir, copyFile } from 'fs/promises';
+import { readdir, stat, mkdir } from 'fs/promises';
 import { join } from 'path';
 
 const SRC = 'public/images';
@@ -9,7 +9,7 @@ const QUALITY = 80;
 
 await mkdir(TMP, { recursive: true });
 
-const files = (await readdir(SRC)).filter(f => f.endsWith('.jpg') || f.endsWith('.JPG'));
+const files = (await readdir(SRC)).filter(f => /\.jpe?g$/i.test(f));
 
 console.log(`Optimizing ${files.length} images to ${TMP}/...`);
 
@@ -23,6 +23,7 @@ for (const file of files) {
   totalBefore += before;
 
   await sharp(srcPath)
+    .rotate()
     .resize(MAX_WIDTH, null, { withoutEnlargement: true })
     .jpeg({ quality: QUALITY, mozjpeg: true })
     .toFile(outPath);
@@ -35,5 +36,3 @@ for (const file of files) {
 }
 
 console.log(`\nTotal: ${(totalBefore/1024/1024).toFixed(1)}MB -> ${(totalAfter/1024/1024).toFixed(1)}MB`);
-console.log(`\nOptimized files are in ${TMP}/`);
-console.log(`Run: rm -rf public/images && mv public/images-optimized public/images`);
