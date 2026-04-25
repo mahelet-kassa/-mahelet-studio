@@ -35,16 +35,16 @@ export default function About() {
 
               <div className="space-y-5 text-neutral-600 font-light leading-relaxed">
                 <p>
-                  Photography began as something I simply loved doing, and over time it became a way for me to connect with people and the world around me. I'm drawn to real moments — the kind that aren't forced — and to the way light, seasons, and emotion come together to tell a story.
+                  Photography began as something I simply loved doing, and over time it became a way for me to connect with people and the world around me. I'm drawn to real moments the kind that aren't forced and to the way light, seasons, and emotion come together to tell a story.
                 </p>
                 <p>
-                  I love photographing people in a way that feels natural and true to who they are. Boston is a big part of my inspiration — the character of its streets, the charm of its cafés and bookstores, and the details in its architecture all influence how I see and capture images.
+                  I love photographing people in a way that feels natural and true to who they are. Boston is a big part of my inspiration the character of its streets, the charm of its cafés and bookstores, and the details in its architecture all influence how I see and capture images.
                 </p>
                 <p>
                   When we work together, my goal is to keep things relaxed and genuine. I'll guide you when needed, pay attention to the small details, and create a space where you can feel comfortable just being yourself.
                 </p>
                 <p>
-                  More than anything, I want you to leave with images that feel real to you — and an experience that felt easy, meaningful, and memorable.
+                  More than anything, I want you to leave with images that feel real to you and an experience that felt easy, meaningful, and memorable.
                 </p>
               </div>
 
