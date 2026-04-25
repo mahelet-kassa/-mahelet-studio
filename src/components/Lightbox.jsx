@@ -83,10 +83,6 @@ export default function Lightbox({ images, currentIndex, onClose, onPrev, onNext
             alt={image.title}
             className="max-w-full max-h-[85vh] object-contain rounded-sm"
           />
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/50 to-transparent">
-            <p className="text-white text-sm font-light tracking-wide">{image.title}</p>
-            <p className="text-white/60 text-xs mt-0.5">{image.category}</p>
-          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>
