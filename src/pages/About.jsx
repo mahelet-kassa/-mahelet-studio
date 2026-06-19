@@ -33,16 +33,19 @@ export default function About() {
                 I am so excited to meet you.
               </p>
               <p>
-                Photography began as something I simply loved doing, and over time it became a way for me to connect with people and the world around me. I'm drawn to real moments — the kind that aren't forced — and to the way light, seasons, and emotion come together to tell a story.
+                Photography began as something I simply loved doing, and over time it became a way for me to connect with people and the world around me. I took a film photography class in college and spent hours in the darkroom developing my own prints, and that hands-on start is where my love for the craft really took root. I'm drawn to real moments, the kind that aren't forced, and to the way light, seasons, and emotion come together to tell a story.
               </p>
               <p>
-                I love photographing people in a way that feels natural and true to who they are. Boston is a big part of my inspiration — the character of its streets, the charm of its cafés and bookstores, and the details in its architecture all influence how I see and capture images.
+                I love photographing people in a way that feels natural and true to who they are. Boston is a big part of my inspiration. The character of its streets, the charm of its cafés and bookstores, and the details in its architecture all influence how I see and capture images.
               </p>
               <p>
                 When we work together, my goal is to keep things relaxed and genuine. I'll guide you when needed, pay attention to the small details, and create a space where you can feel comfortable just being yourself.
               </p>
               <p>
-                More than anything, I want you to leave with images that feel real to you — and an experience that felt easy, meaningful, and memorable.
+                More than anything, I want you to leave with images that feel real to you, and an experience that felt easy, meaningful, and memorable.
+              </p>
+              <p>
+                Photography is a personal passion of mine, so I keep my pricing simple and affordable. For full transparency, every photo you see here is completely unedited, exactly as it came out of the camera, so you always know what to expect. If you like what you see and would like to work with me, I'd love to hear from you.
               </p>
               <Link
                 to="/contact"
