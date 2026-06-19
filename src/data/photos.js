@@ -86,4 +86,4 @@ export const photos = collections.flatMap(({ folder, category, files }) =>
 
 export const featuredPhotos = photos.filter((p) => p.featured);
 
-export const heroImage = '/images/2026 Graduation/photo-42.jpg';
+export const heroImage = '/images/2025/photo-35.jpg';

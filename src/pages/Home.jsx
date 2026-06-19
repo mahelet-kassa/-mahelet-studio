@@ -5,12 +5,6 @@ import PageTransition from '../components/PageTransition';
 import FadeIn from '../components/FadeIn';
 import { heroImage, featuredPhotos } from '../data/photos';
 
-function layoutClass(layout) {
-  if (layout === 'large') return 'sm:row-span-2';
-  if (layout === 'wide') return 'sm:col-span-2';
-  return '';
-}
-
 export default function Home() {
   return (
     <PageTransition>
@@ -72,14 +66,14 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 auto-rows-[220px] lg:auto-rows-[260px]">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-3 lg:gap-4">
           {featuredPhotos.map((photo, i) => (
-            <FadeIn key={photo.id} delay={i * 0.08} className={layoutClass(photo.layout)}>
-              <Link to="/gallery" className="group block h-full relative overflow-hidden bg-[#e8e4df]">
+            <FadeIn key={photo.id} delay={i * 0.08} className="mb-3 lg:mb-4 break-inside-avoid">
+              <Link to="/gallery" className="group block relative overflow-hidden bg-[#e8e4df]">
                 <img
                   src={photo.thumb}
                   alt={photo.title}
-                  className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
+                  className="w-full h-auto object-contain transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
                 />
               </Link>
             </FadeIn>
