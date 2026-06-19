@@ -53,7 +53,7 @@ const overrides = {
   '/images/2026 Graduation/photo-49.jpg': { title: 'Achievement' },
   '/images/2026 Graduation/photo-50.jpg': { title: 'Celebration' },
   '/images/Portraits/photo-58.jpg': { title: 'Natural Light', featured: true, layout: 'large' },
-  '/images/Portraits/photo-63.jpg': { title: 'Quiet Moment' },
+  '/images/Portraits/photo-63.jpg': { title: 'Quiet Moment', featured: true },
   '/images/Couples/photo-71.jpg': { title: 'Together', featured: true },
 };
 
