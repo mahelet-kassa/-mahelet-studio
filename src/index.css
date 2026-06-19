@@ -1,15 +1,15 @@
-/* Tailwind CSS — utility-first CSS framework (https://tailwindcss.com) */
+/* Tailwind CSS */
 @import "tailwindcss";
 
-/* Custom fonts & colors — extends Tailwind's default theme */
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
-  --color-neutral-925: #111110;
-  --color-neutral-875: #1a1a19;
+  --color-cream: #f7f5f2;
+  --color-ink: #141414;
+  --color-muted: #6b6560;
+  --color-line: #e8e4df;
 }
 
-/* Global defaults */
 html {
   scroll-behavior: smooth;
 }
@@ -18,30 +18,27 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
-  color: #111;
+  background-color: var(--color-cream);
+  color: var(--color-ink);
 }
 
 ::selection {
-  background-color: #111;
+  background-color: var(--color-ink);
   color: #fff;
 }
 
-/* Custom scrollbar (Chrome, Edge, Safari) */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
 
-/* Lightbox cursor styles */
 .cursor-zoom-in { cursor: zoom-in; }
 .cursor-zoom-out { cursor: zoom-out; }
+
+/* Editorial grid helpers */
+.gallery-item-large { grid-row: span 2; }
+.gallery-item-wide { grid-column: span 2; }
+
+@media (max-width: 640px) {
+  .gallery-item-large,
+  .gallery-item-wide { grid-column: span 1; grid-row: span 1; }
+}

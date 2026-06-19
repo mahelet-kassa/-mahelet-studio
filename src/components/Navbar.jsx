@@ -5,10 +5,9 @@ import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
 const links = [
-  { to: '/', label: 'Home' },
-  { to: '/gallery', label: 'Gallery' },
-  { to: '/services', label: 'Services' },
+  { to: '/gallery', label: 'Work' },
   { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -19,47 +18,38 @@ export default function Navbar() {
   const isHome = location.pathname === '/';
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => { setMobileOpen(false); }, [location]);
 
-  const navBg = scrolled || !isHome
-    ? 'bg-white/95 backdrop-blur-md border-b border-neutral-200/60'
-    : 'bg-transparent';
-
-  const textColor = scrolled || !isHome ? 'text-neutral-900' : 'text-white';
+  const solid = scrolled || !isHome;
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBg}`}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-18 lg:h-20">
-            <Logo light={!scrolled && isHome} size="md" />
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        solid ? 'bg-[#f7f5f2]/90 backdrop-blur-md border-b border-[#e8e4df]/80' : 'bg-transparent'
+      }`}>
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="flex items-center justify-between h-16 lg:h-[4.5rem]">
+            <Logo light={!solid && isHome} size="md" />
 
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-10">
               {links.map((link) => {
                 const active = location.pathname === link.to;
                 return (
                   <Link
                     key={link.to}
                     to={link.to}
-                    className={`relative text-[13px] uppercase tracking-[0.15em] font-medium transition-colors duration-300 ${
+                    className={`text-[11px] uppercase tracking-[0.2em] font-medium transition-colors ${
                       active
-                        ? scrolled || !isHome ? 'text-neutral-900' : 'text-white'
-                        : scrolled || !isHome ? 'text-neutral-500 hover:text-neutral-900' : 'text-white/70 hover:text-white'
+                        ? solid ? 'text-[#141414]' : 'text-white'
+                        : solid ? 'text-[#6b6560] hover:text-[#141414]' : 'text-white/60 hover:text-white'
                     }`}
                   >
                     {link.label}
-                    {active && (
-                      <motion.div
-                        layoutId="nav-underline"
-                        className={`absolute -bottom-1 left-0 right-0 h-px ${scrolled || !isHome ? 'bg-neutral-900' : 'bg-white'}`}
-                        transition={{ duration: 0.3 }}
-                      />
-                    )}
                   </Link>
                 );
               })}
@@ -67,7 +57,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`md:hidden p-2 -mr-2 transition-colors ${textColor}`}
+              className={`md:hidden p-2 -mr-2 transition-colors ${solid ? 'text-[#141414]' : 'text-white'}`}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -76,29 +66,26 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center"
+            className="fixed inset-0 z-40 bg-[#f7f5f2] flex flex-col items-center justify-center"
           >
-            <nav className="flex flex-col items-center gap-8">
+            <nav className="flex flex-col items-center gap-10">
+              <Link to="/" className="font-serif text-2xl text-[#141414]" onClick={() => setMobileOpen(false)}>Home</Link>
               {links.map((link, i) => (
                 <motion.div
                   key={link.to}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.08 + 0.1 }}
+                  transition={{ delay: i * 0.06 }}
                 >
                   <Link
                     to={link.to}
-                    className={`text-2xl font-serif tracking-wide ${
-                      location.pathname === link.to ? 'text-neutral-900' : 'text-neutral-400 hover:text-neutral-900'
-                    } transition-colors`}
+                    className="text-xl font-serif text-[#6b6560] hover:text-[#141414] transition-colors"
                   >
                     {link.label}
                   </Link>

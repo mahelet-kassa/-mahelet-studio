@@ -1,45 +1,89 @@
-// Mahelet Studio — graduation photography collection
+// Portfolio photos — generated from every image folder under public/images.
+// To add new work: drop files in a folder below and list the filenames here.
 
 export const categories = ['All', 'Graduation', 'Portraits', 'Couples'];
 
-export const photos = [
-  { id: 1,  src: '/images/photo-01.jpg', thumb: '/images/photo-01.jpg', title: 'Cap & Gown', category: 'Graduation', aspect: 'landscape' },
-  { id: 2,  src: '/images/photo-02.jpg', thumb: '/images/photo-02.jpg', title: 'The Big Day', category: 'Graduation', aspect: 'landscape' },
-  { id: 3,  src: '/images/photo-03.jpg', thumb: '/images/photo-03.jpg', title: 'Walking the Stage', category: 'Graduation', aspect: 'landscape' },
-  { id: 4,  src: '/images/photo-04.jpg', thumb: '/images/photo-04.jpg', title: 'Proud Moment', category: 'Graduation', aspect: 'landscape' },
-  { id: 5,  src: '/images/photo-05.jpg', thumb: '/images/photo-05.jpg', title: 'Celebration', category: 'Graduation', aspect: 'landscape' },
-  { id: 6,  src: '/images/photo-06.jpg', thumb: '/images/photo-06.jpg', title: 'Graduate Portrait', category: 'Portraits', aspect: 'landscape' },
-  { id: 7,  src: '/images/photo-07.jpg', thumb: '/images/photo-07.jpg', title: 'Heartfelt Moment', category: 'Couples', aspect: 'landscape' },
-  { id: 10, src: '/images/photo-10.jpg', thumb: '/images/photo-10.jpg', title: 'Together', category: 'Couples', aspect: 'landscape' },
-  { id: 11, src: '/images/photo-11.jpg', thumb: '/images/photo-11.jpg', title: 'Diploma in Hand', category: 'Graduation', aspect: 'landscape' },
-  { id: 12, src: '/images/photo-12.jpg', thumb: '/images/photo-12.jpg', title: 'Solo Portrait', category: 'Portraits', aspect: 'landscape' },
-  { id: 13, src: '/images/photo-13.jpg', thumb: '/images/photo-13.jpg', title: 'Side by Side', category: 'Couples', aspect: 'landscape' },
-  { id: 14, src: '/images/photo-14.jpg', thumb: '/images/photo-14.jpg', title: 'Close to You', category: 'Couples', aspect: 'landscape' },
-  { id: 15, src: '/images/photo-15.jpg', thumb: '/images/photo-15.jpg', title: 'Golden Hour Graduate', category: 'Portraits', aspect: 'landscape' },
-  { id: 16, src: '/images/photo-16.jpg', thumb: '/images/photo-16.jpg', title: 'Tassel Day', category: 'Graduation', aspect: 'landscape' },
-  { id: 17, src: '/images/photo-17.jpg', thumb: '/images/photo-17.jpg', title: 'Pure Happiness', category: 'Graduation', aspect: 'landscape' },
-  { id: 19, src: '/images/photo-19.jpg', thumb: '/images/photo-19.jpg', title: 'Stage Walk', category: 'Graduation', aspect: 'landscape' },
-  { id: 21, src: '/images/photo-21.jpg', thumb: '/images/photo-21.jpg', title: 'Commencement', category: 'Graduation', aspect: 'landscape' },
-  { id: 22, src: '/images/photo-22.jpg', thumb: '/images/photo-22.jpg', title: 'New Beginning', category: 'Portraits', aspect: 'landscape' },
-  { id: 23, src: '/images/photo-23.jpg', thumb: '/images/photo-23.jpg', title: 'Tassel Toss', category: 'Graduation', aspect: 'landscape' },
-  { id: 24, src: '/images/photo-24.jpg', thumb: '/images/photo-24.jpg', title: 'Timeless Portrait', category: 'Portraits', aspect: 'landscape' },
-  { id: 25, src: '/images/photo-25.jpg', thumb: '/images/photo-25.jpg', title: 'A Moment Apart', category: 'Couples', aspect: 'landscape' },
-  { id: 26, src: '/images/photo-26.jpg', thumb: '/images/photo-26.jpg', title: 'Bright Beginnings', category: 'Portraits', aspect: 'landscape' },
-  { id: 27, src: '/images/photo-27.jpg', thumb: '/images/photo-27.jpg', title: 'Reflections', category: 'Portraits', aspect: 'landscape' },
-  { id: 28, src: '/images/photo-28.jpg', thumb: '/images/photo-28.jpg', title: 'Golden Memories', category: 'Graduation', aspect: 'landscape' },
-  { id: 29, src: '/images/photo-29.jpg', thumb: '/images/photo-29.jpg', title: 'Hand in Hand', category: 'Couples', aspect: 'landscape' },
-  { id: 30, src: '/images/photo-30.jpg', thumb: '/images/photo-30.jpg', title: 'The Walk', category: 'Graduation', aspect: 'landscape' },
-  { id: 31, src: '/images/photo-31.jpg', thumb: '/images/photo-31.jpg', title: 'Quiet Confidence', category: 'Portraits', aspect: 'landscape' },
-  { id: 32, src: '/images/photo-32.jpg', thumb: '/images/photo-32.jpg', title: 'Shared Laughter', category: 'Couples', aspect: 'landscape' },
-  { id: 33, src: '/images/photo-33.jpg', thumb: '/images/photo-33.jpg', title: 'Standing Tall', category: 'Portraits', aspect: 'landscape' },
-  { id: 34, src: '/images/photo-34.jpg', thumb: '/images/photo-34.jpg', title: 'We Made It', category: 'Graduation', aspect: 'landscape' },
-  { id: 35, src: '/images/photo-35.jpg', thumb: '/images/photo-35.jpg', title: 'Our Story', category: 'Couples', aspect: 'landscape' },
-  { id: 37, src: '/images/photo-37.jpg', thumb: '/images/photo-37.jpg', title: 'Legacy', category: 'Graduation', aspect: 'landscape' },
-  { id: 38, src: '/images/photo-38.jpg', thumb: '/images/photo-38.jpg', title: 'Always & Forever', category: 'Couples', aspect: 'landscape' },
+// Each folder maps to a display category. The full library lives here.
+const collections = [
+  {
+    folder: '2025',
+    category: 'Graduation',
+    files: [
+      'photo-01.jpg', 'photo-02.jpg', 'photo-03.jpg', 'photo-04.jpg', 'photo-05.jpg',
+      'photo-06.jpg', 'photo-07.jpg', 'photo-10.jpg', 'photo-11.jpg', 'photo-12.jpg',
+      'photo-13.jpg', 'photo-14.jpg', 'photo-15.jpg', 'photo-16.jpg', 'photo-17.jpg',
+      'photo-19.jpg', 'photo-21.jpg', 'photo-22.jpg', 'photo-24.jpg', 'photo-25.jpg',
+      'photo-27.jpg', 'photo-28.jpg', 'photo-29.jpg', 'photo-30.jpg', 'photo-31.jpg',
+      'photo-32.jpg', 'photo-33.jpg', 'photo-35.jpg', 'photo-36.jpg', 'photo-38.jpg',
+    ],
+  },
+  {
+    folder: '2026 Graduation',
+    category: 'Graduation',
+    files: [
+      'photo-39.jpg', 'photo-40.jpg', 'photo-41.jpg', 'photo-42.jpg', 'photo-43.jpg',
+      'photo-44.jpg', 'photo-45.jpg', 'photo-46.jpg', 'photo-47.jpg', 'photo-48.jpg',
+      'photo-49.jpg', 'photo-50.jpg', 'photo-51.jpg', 'photo-52.jpg', 'photo-53.jpg',
+      'photo-54.jpg', 'photo-55.jpg', 'photo-56.jpg',
+    ],
+  },
+  {
+    folder: 'Portraits',
+    category: 'Portraits',
+    files: [
+      'photo-57.jpg', 'photo-58.jpg', 'photo-59.jpg', 'photo-60.jpg', 'photo-61.jpg',
+      'photo-62.jpg', 'photo-63.jpg', 'photo-64.jpg', 'photo-65.jpg', 'photo-66.jpg',
+      'photo-67.jpg', 'photo-68.jpg', 'photo-69.jpg',
+    ],
+  },
+  {
+    folder: 'Couples',
+    category: 'Couples',
+    files: ['photo-71.jpg'],
+  },
 ];
 
-export const featuredPhotos = photos.filter(p =>
-  [1, 26, 14, 31, 28, 35].includes(p.id)
+// Optional per-image curation, keyed by web path. Anything not listed gets a
+// sensible auto-generated title and a standard grid cell.
+const overrides = {
+  '/images/2025/photo-01.jpg': { title: 'Cap & Gown', featured: true, layout: 'large' },
+  '/images/2025/photo-28.jpg': { title: 'Golden Memories', featured: true },
+  '/images/2025/photo-35.jpg': { title: 'Our Story', layout: 'wide' },
+  '/images/2026 Graduation/photo-42.jpg': { title: 'Commencement Day', featured: true, layout: 'wide' },
+  '/images/2026 Graduation/photo-49.jpg': { title: 'Achievement' },
+  '/images/2026 Graduation/photo-50.jpg': { title: 'Celebration' },
+  '/images/Portraits/photo-58.jpg': { title: 'Natural Light', featured: true, layout: 'large' },
+  '/images/Portraits/photo-63.jpg': { title: 'Quiet Moment' },
+  '/images/Couples/photo-71.jpg': { title: 'Together', featured: true },
+};
+
+function titleFromFilename(file) {
+  return file
+    .replace(/\.[^.]+$/, '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
+let nextId = 0;
+
+export const photos = collections.flatMap(({ folder, category, files }) =>
+  files.map((file) => {
+    const src = `/images/${folder}/${file}`;
+    const custom = overrides[src] || {};
+    return {
+      id: (nextId += 1),
+      src,
+      thumb: src,
+      folder,
+      category,
+      aspect: 'landscape',
+      title: custom.title || titleFromFilename(file),
+      ...(custom.featured ? { featured: true } : {}),
+      ...(custom.layout ? { layout: custom.layout } : {}),
+    };
+  })
 );
 
-export const heroImage = '/images/photo-01.jpg';
+export const featuredPhotos = photos.filter((p) => p.featured);
+
+export const heroImage = '/images/2026 Graduation/photo-42.jpg';

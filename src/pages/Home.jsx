@@ -1,118 +1,125 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
 import FadeIn from '../components/FadeIn';
 import { heroImage, featuredPhotos } from '../data/photos';
+
+function layoutClass(layout) {
+  if (layout === 'large') return 'sm:row-span-2';
+  if (layout === 'wide') return 'sm:col-span-2';
+  return '';
+}
 
 export default function Home() {
   return (
     <PageTransition>
       {/* Hero */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-[92vh] min-h-[560px] w-full overflow-hidden bg-[#141414]">
         <motion.div
-          initial={{ scale: 1.1 }}
+          initial={{ scale: 1.06 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="absolute inset-0"
         >
           <img
             src={heroImage}
-            alt="Featured photograph"
-            className="w-full h-full object-cover"
+            alt="Mahelet Studio"
+            className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
         </motion.div>
 
-        <div className="relative z-10 h-full flex flex-col justify-end pb-20 lg:pb-28 px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="relative z-10 h-full flex flex-col justify-end max-w-6xl mx-auto px-6 lg:px-10 pb-16 lg:pb-24">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
+            transition={{ delay: 0.5, duration: 0.9 }}
+            className="max-w-2xl"
           >
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl text-white font-medium leading-[1.1] max-w-3xl">
-              Capturing Moments<br />
-              <span className="italic font-normal">That Matter</span>
-            </h1>
-            <p className="mt-6 text-white/60 text-base lg:text-lg max-w-lg leading-relaxed font-light">
-              Graduation, portrait & couples photography based in Boston.
+            <p className="text-white/50 text-[11px] uppercase tracking-[0.35em] mb-5 font-medium">
+              Boston · Photography
             </p>
-            <div className="mt-8">
-              <Link
-                to="/gallery"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-neutral-900 text-sm font-medium tracking-wide hover:bg-neutral-100 transition-colors rounded-sm"
-              >
-                View My Work
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+            <h1 className="font-serif text-[2.75rem] sm:text-5xl lg:text-6xl text-white font-medium leading-[1.05] tracking-tight">
+              Real moments,<br />
+              <span className="italic font-normal text-white/90">beautifully told.</span>
+            </h1>
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 mt-10 text-white/80 text-sm tracking-wide border-b border-white/30 pb-1 hover:text-white hover:border-white transition-colors"
+            >
+              View selected work
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-            className="w-px h-10 bg-white/40"
-          />
-        </motion.div>
       </section>
 
-      {/* Featured Work */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+      {/* Curated work */}
+      <section className="max-w-6xl mx-auto px-6 lg:px-10 py-20 lg:py-28">
+        <FadeIn>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 lg:mb-16">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.35em] text-[#6b6560] mb-3">Selected Work</p>
+              <h2 className="font-serif text-3xl lg:text-4xl font-medium tracking-tight">A curated glimpse</h2>
+            </div>
+            <Link
+              to="/gallery"
+              className="text-sm text-[#6b6560] hover:text-[#141414] transition-colors shrink-0"
+            >
+              Full gallery →
+            </Link>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 auto-rows-[220px] lg:auto-rows-[260px]">
           {featuredPhotos.map((photo, i) => (
-            <FadeIn key={photo.id} delay={i * 0.1}>
-              <Link to="/gallery" className="group block relative overflow-hidden rounded-sm">
-                <div className="aspect-[4/3] overflow-hidden bg-neutral-100">
-                  <img
-                    src={photo.thumb}
-                    alt={photo.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500" />
+            <FadeIn key={photo.id} delay={i * 0.08} className={layoutClass(photo.layout)}>
+              <Link to="/gallery" className="group block h-full relative overflow-hidden bg-[#e8e4df]">
+                <img
+                  src={photo.thumb}
+                  alt={photo.title}
+                  className="w-full h-full object-cover object-top transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
+                />
               </Link>
             </FadeIn>
           ))}
         </div>
-
-        <FadeIn>
-          <div className="mt-10 text-center">
-            <Link
-              to="/gallery"
-              className="inline-flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors font-medium"
-            >
-              View Full Gallery
-              <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </FadeIn>
       </section>
 
-      {/* Simple CTA */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-28 text-center">
-        <FadeIn>
-          <h2 className="font-serif text-2xl lg:text-3xl font-medium mb-4">
-            Interested in working together?
-          </h2>
-          <p className="text-neutral-500 max-w-md mx-auto mb-8 font-light leading-relaxed">
-            I'd love to hear from you. Let's chat about what you have in mind.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-neutral-900 text-white text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors rounded-sm"
-          >
-            Get in Touch
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </FadeIn>
+      {/* Story + CTA */}
+      <section className="border-t border-[#e8e4df]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <FadeIn>
+            <p className="text-[11px] uppercase tracking-[0.35em] text-[#6b6560] mb-4">About</p>
+            <h2 className="font-serif text-2xl lg:text-3xl font-medium leading-snug mb-6">
+              Photography rooted in genuine connection.
+            </h2>
+            <p className="text-[#6b6560] font-light leading-relaxed max-w-md">
+              Graduation, portrait, and couples sessions in Boston — relaxed, natural, and focused on the moments that feel true to you.
+            </p>
+            <Link
+              to="/about"
+              className="inline-block mt-8 text-sm text-[#141414] border-b border-[#141414]/30 pb-0.5 hover:border-[#141414] transition-colors"
+            >
+              Read my story
+            </Link>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <div className="lg:text-right">
+              <p className="font-serif text-xl lg:text-2xl font-medium mb-6 italic text-[#141414]/80">
+                Let's create something meaningful together.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#141414] text-white text-sm tracking-wide hover:bg-[#2a2a2a] transition-colors"
+              >
+                Get in touch
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
       </section>
     </PageTransition>
   );

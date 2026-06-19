@@ -17,23 +17,22 @@ export default function Contact() {
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
-  const inputClasses = 'w-full px-0 py-3 bg-transparent border-b border-neutral-300 text-neutral-900 text-sm placeholder-neutral-400 outline-none focus:border-neutral-900 transition-colors font-light';
+  const inputClasses = 'w-full px-0 py-3 bg-transparent border-b border-[#e8e4df] text-[#141414] text-sm placeholder-[#6b6560]/50 outline-none focus:border-[#141414] transition-colors font-light';
 
   return (
     <PageTransition>
       {/* Header */}
-      <section className="pt-32 lg:pt-40 pb-16 px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="pt-32 lg:pt-36 pb-16 px-6 lg:px-10 max-w-6xl mx-auto">
         <FadeIn>
-          <p className="text-xs uppercase tracking-[0.3em] text-neutral-400 font-medium mb-3">Contact</p>
-          <h1 className="font-serif text-4xl lg:text-5xl font-medium mb-4">Let's Connect</h1>
-          <p className="text-neutral-500 max-w-lg font-light leading-relaxed">
-            Have something in mind? I'd love to hear from you. Send me a message and I'll get back to you soon.
+          <p className="text-[11px] uppercase tracking-[0.35em] text-[#6b6560] mb-4">Contact</p>
+          <h1 className="font-serif text-4xl lg:text-5xl font-medium tracking-tight mb-5">Get in touch</h1>
+          <p className="text-[#6b6560] max-w-md font-light leading-relaxed">
+            Have something in mind? I'd love to hear from you.
           </p>
         </FadeIn>
       </section>
 
-      {/* Content */}
-      <section className="px-6 lg:px-8 max-w-7xl mx-auto pb-24">
+      <section className="px-6 lg:px-10 max-w-6xl mx-auto pb-28">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20">
           {/* Form */}
           <div className="lg:col-span-7">
@@ -123,7 +122,7 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-7 py-3.5 bg-neutral-900 text-white text-sm font-medium tracking-wide hover:bg-neutral-800 transition-colors rounded-sm"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-[#141414] text-white text-sm tracking-wide hover:bg-[#2a2a2a] transition-colors"
                   >
                     Send Message
                     <Send className="w-4 h-4" />
